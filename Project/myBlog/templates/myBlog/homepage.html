@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'myBlog/base.html'%}
+
+{% block content %}
+    {% for xpost in postKey %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ xpost.author }}</a>
+              <small class="text-muted">{{ xpost.date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ xpost.title }}</a></h2>
+            <p class="article-content">{{ xpost.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}
