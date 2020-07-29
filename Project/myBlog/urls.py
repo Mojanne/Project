@@ -4,7 +4,8 @@ from .views import (PostListView,
                     PostDetailView,
                     PostCreateView,
                     PostUpdateView,
-                    PostDeleteView)
+                    PostDeleteView
+                    )
 # . means the current directory
 
 urlpatterns = [
